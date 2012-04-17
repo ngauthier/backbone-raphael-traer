@@ -66,3 +66,11 @@
     setTimeout(function() {m.set({value: 20})}, 1000);
 </script>
 <p id='raphael-view'></p>
+
+!SLIDE
+# TODO
+* collection of simple models
+* traer backed model
+* force propagation
+* show demo
+* exobrain demo
