@@ -1,0 +1,7 @@
+{ "name": "Backbone + Raphael + Traer", "sections": [
+  {"section":"intro"},
+  {"section":"raphael"},
+  {"section":"backbone"},
+  {"section":"traer"},
+  {"section":"conclusion"}
+]}
