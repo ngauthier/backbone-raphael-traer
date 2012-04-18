@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Backbone + Raphael + Traer</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/style.css" type="text/css"/>
+  
+
+  
+    <script type="text/javascript" src="file/raphael-min.js"></script>
+  
+    <script type="text/javascript" src="file/underscore.js"></script>
+  
+    <script type="text/javascript" src="file/backbone.js"></script>
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<h1>Backbone + Raphael + Traer</h1>
+
+<h2>Nick Gauthier</h2>
+
+<h3>@ngauthier</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/2">
+<h1>Backbone</h1>
+
+<ul>
+<li>Event driven</li>
+<li>Data syncing</li>
+<li>View-Model binding</li>
+<li>Routing</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/3">
+<h1>Raphael</h1>
+
+<ul>
+<li>SVG / VML abstraction</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/4">
+<h1>Traer</h1>
+
+<ul>
+<li>Particle physics</li>
+<li>Springs</li>
+<li>Forces</li>
+<li>Integrator</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content execute" ref="raphael/01_slide/1">
+<h1>Raphael</h1>
+
+<pre class="sh_javascript"><code>var paper = Raphael('raphael-circle')
+paper.circle(500,50,30);</code></pre>
+
+<div id="raphael-circle"/>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content execute" ref="raphael/01_slide/2">
+<h1>Dom Events</h1>
+
+<pre class="sh_javascript"><code>var paper = Raphael('raphael-circle-event')
+var circle = paper.circle(500,50,30);
+circle.attr({fill: 'white'});
+$(circle.node).bind('click', function() {
+  circle.attr({fill: 'red'});
+});</code></pre>
+
+<div id="raphael-circle-event"/>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="raphael/01_slide/3">
+<h1>Lots more</h1>
+
+<h2><a href="http://raphaeljs.com">raphaeljs.com</a></h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="backbone/01_slide/1">
+<h1>Backbone</h1>
+
+<ul>
+<li>Models</li>
+<li>Views</li>
+<li>Collections</li>
+<li>Router</li>
+<li>Whole library</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content execute" ref="backbone/01_slide/2">
+<h1>Model Event</h1>
+
+<pre class="sh_javascript"><code>var m = new Backbone.Model({
+  value: 10
+});
+m.on('change:value', function(m) {
+  alert(m.get('value'));
+});
+m.set({value: 20});</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content execute" ref="backbone/01_slide/3">
+<h1>View binding</h1>
+
+<pre class="sh_javascript"><code>var m = new Backbone.Model({value: 10});
+var v = new (Backbone.View.extend({
+  initialize: function() {
+    this.model.on('change', this.render, this);
+  },
+  render: function() {
+    this.$el.html(this.model.get('value'));
+    return this;
+  }
+}))({model: m});
+$('#backbone-view-binding').append(v.render().el);
+setTimeout(function() {m.set({value: 20})}, 1000);</code></pre>
+
+<p id="backbone-view-binding"/>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="backbone/01_slide/4">
+<h1>Raphael View</h1>
+
+<pre class="sh_javascript"><code>render: function() {
+  if (this.raphEl) this.raphEl.remove();
+  this.paper = this.paper || Raphael(this.el);
+  this.raphEl = this.paper.circle(
+    25, 25, this.model.get('value')
+  );
+  return this;
+}</code></pre>
+
+<script>
+    var m = new Backbone.Model({value: 10});
+    var v = new (Backbone.View.extend({
+      initialize: function() {
+        this.model.on('change', this.render, this);
+      },
+      render: function() {
+        if (this.raphEl) this.raphEl.remove();
+        this.paper = this.paper || Raphael(this.el);
+        this.raphEl = this.paper.circle(
+          25, 25, this.model.get('value')
+        );
+        return this;
+      }
+    }))({model: m});
+    $('#raphael-view').append(v.render().el);
+    setTimeout(function() {m.set({value: 20})}, 1000);
+</script>
+
+
+<p id="raphael-view"/>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="backbone/01_slide/5">
+<h1>Collections</h1>
+
+<pre class="sh_javascript"><code>var collection = new Backbone.Collection({
+  {value: 10},
+  {value: 20}
+});
+collection.each(function(model) {
+  var view = new ModelView({model: model});
+  $('body').append(view.render().el);
+});</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="backbone/01_slide/6">
+<h1>Enough Backbone for now</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/1">
+<h1>Traer.js</h1>
+
+<ul>
+<li>Based on Jeff Bernstein's lib for Processing</li>
+<li>Particle physics</li>
+<li>Integrator</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/2">
+<h1>Traer-Backbone Extension</h1>
+
+<h2>Particles fire events (like models)</h2>
+
+<pre class="sh_javascript"><code>function Particle(mass) {
+  // redacted
+  _.extend(this, Backbone.Events);
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/3">
+<h1>Traer-Backbone Extension</h1>
+
+<h2>Every time the integrator computes new state</h2>
+
+<pre class="sh_javascript"><code>RungeKuttaIntegrator.prototype.step = function (deltaT) {
+  /* lots of physics stuff redacted */
+  p.trigger('change'); // p is the particle
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/4">
+<h1>Traer-Backbone Model</h1>
+
+<h2>Wrap a Prticle</h2>
+
+<pre class="sh_javascript"><code>Node = Backbone.Model.extend({
+  initialize: function(attributes) {
+    // when the particle changes, we fire a change
+    this.get('particle').on('change', function() {
+      this.trigger('change'); 
+    }, this);
+    this.children = new NodeList();
+  },
+  // proxy some particle attributes
+  x:    function() { return this.get('particle').position.x; },
+  y:    function() { return this.get('particle').position.y; },
+});</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/5">
+<h1>Traer-Backbone Model</h1>
+
+<h2>Create children</h2>
+
+<pre class="sh_javascript"><code>createChild: function() {
+  var mass = 0.4;
+  var x = this.x() + Math.random() * 50 - 25;
+  var y = this.y() + Math.random() * 50 - 25;
+  var particle = Exobrain.makeParticle(mass, x, y, 0);
+  var node = new Exobrain.Node({particle: particle, size: 10});
+  this.children.add(node);
+  var spring = 0.02;
+  var damping = 0.10;
+  var length = 120;
+  traer.makeSpring(this.particle(), node.particle(), spring, damping, length);
+},</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/6">
+<h1>Traer-Backbone Model</h1>
+
+<h2>Propagate forces</h2>
+
+<pre class="sh_javascript"><code>this.trigger('child', node);
+node.on('child', this.link, this);
+node.on('child', function(child) {
+  this.trigger('child', child);
+}, this);
+return node;</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/7">
+<h1>Demo</h1>
+
+<ul>
+<li><a href="http://ngauthier.com/demo/backbone-raphael-traer.html">http://ngauthier.com/demo/backbone-raphael-traer.html</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/1">
+<h1>SVG + Dom = &lt;3</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/2">
+<h1>Square</h1>
+
+<ul>
+<li>Ember</li>
+<li>D3.js</li>
+<li>Analytics</li>
+<li><a href="http://corner.squareup.com/2012/04/building-analytics.html">http://corner.squareup.com/2012/04/building-analytics.html</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/3">
+<h1>Exobrain</h1>
+
+<ul>
+<li>Mind mapping</li>
+<li>Spatial</li>
+<li><a href="http://exobrain.co">http://exobrain.co</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/4">
+<h1>Exobrain</h1>
+
+<h2>Demo</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/5">
+<h1>Questions</h1>
+
+<h2>Nick Gauthier</h2>
+
+<h3>@ngauthier</h3>
+
+<h3><a href="http://github.com/ngauthier/backbone-raphael-traer">http://github.com/ngauthier/backbone-raphael-traer</a></h3></div>
+</div></div>
+
+</body>
+</html>
