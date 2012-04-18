@@ -35,11 +35,11 @@
   
 
   
+    <script type="text/javascript" src="file/01-underscore.js"></script>
+  
     <script type="text/javascript" src="file/raphael-min.js"></script>
   
-    <script type="text/javascript" src="file/underscore.js"></script>
-  
-    <script type="text/javascript" src="file/backbone.js"></script>
+    <script type="text/javascript" src="file/02-backbone.js"></script>
   
 
   <script type="text/javascript">
@@ -287,30 +287,34 @@ collection.each(function(model) {
   var mass = 0.4;
   var x = this.x() + Math.random() * 50 - 25;
   var y = this.y() + Math.random() * 50 - 25;
-  var particle = Exobrain.makeParticle(mass, x, y, 0);
-  var node = new Exobrain.Node({particle: particle, size: 10});
+  var particle = traer.makeParticle(mass, x, y, 0);
+  var node = new Node({particle: particle, size: 10});
   this.children.add(node);
   var spring = 0.02;
   var damping = 0.10;
   var length = 120;
-  traer.makeSpring(this.particle(), node.particle(), spring, damping, length);
+  traer.makeSpring(
+    this.particle(), node.particle(),
+    spring, damping, length
+  );
+  // cont
 },</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/6">
 <h1>Traer-Backbone Model</h1>
 
 <h2>Propagate forces</h2>
 
-<pre class="sh_javascript"><code>this.trigger('child', node);
+<pre class="sh_javascript"><code>// cont
+this.trigger('child', node);
 node.on('child', this.link, this);
 node.on('child', function(child) {
   this.trigger('child', child);
-}, this);
-return node;</code></pre></div>
+}, this);</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="traer/01_slide/7">
 <h1>Demo</h1>
 
 <ul>
-<li><a href="http://ngauthier.com/demo/backbone-raphael-traer.html">http://ngauthier.com/demo/backbone-raphael-traer.html</a></li>
+<li><a href="http://ngauthier.com/demo/backbone-raphael-traer">http://ngauthier.com/demo/backbone-raphael-traer</a></li>
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/1">
@@ -339,6 +343,15 @@ return node;</code></pre></div>
 
 <h2>Demo</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/5">
+<h1>Exobrain</h1>
+
+<ul>
+<li>Raphael + Backbone</li>
+<li>Traer soon :-)</li>
+<li>706 LoC</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/6">
 <h1>Questions?</h1>
 
 <h2>Nick Gauthier</h2>
@@ -348,7 +361,7 @@ return node;</code></pre></div>
 <h3><a href="http://ngauthier.com/backbone-raphael-traer">http://ngauthier.com/backbone-raphael-traer</a></h3>
 
 <h3><a href="http://github.com/ngauthier/backbone-raphael-traer">http://github.com/ngauthier/backbone-raphael-traer</a></h3></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/6">
+</div><div class="slide" data-transition="none"><div class="content" ref="conclusion/01_slide/7">
 <h1>Thanks!</h1></div>
 </div></div>
 
