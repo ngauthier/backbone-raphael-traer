@@ -48,26 +48,30 @@
       var mass = 0.4;
       var x = this.x() + Math.random() * 50 - 25;
       var y = this.y() + Math.random() * 50 - 25;
-      var particle = Exobrain.makeParticle(mass, x, y, 0);
-      var node = new Exobrain.Node({particle: particle, size: 10});
+      var particle = traer.makeParticle(mass, x, y, 0);
+      var node = new Node({particle: particle, size: 10});
       this.children.add(node);
       var spring = 0.02;
       var damping = 0.10;
       var length = 120;
-      traer.makeSpring(this.particle(), node.particle(), spring, damping, length);
+      traer.makeSpring(
+        this.particle(), node.particle(),
+        spring, damping, length
+      );
+      // cont
     },
 
 !SLIDE
 # Traer-Backbone Model
 ## Propagate forces
     @@@ javascript
+    // cont
     this.trigger('child', node);
     node.on('child', this.link, this);
     node.on('child', function(child) {
       this.trigger('child', child);
     }, this);
-    return node;
 
 !SLIDE
 # Demo
-* [http://ngauthier.com/demo/backbone-raphael-traer.html](http://ngauthier.com/demo/backbone-raphael-traer.html)
+* [http://ngauthier.com/demo/backbone-raphael-traer](http://ngauthier.com/demo/backbone-raphael-traer)

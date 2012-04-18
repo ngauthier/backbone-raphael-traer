@@ -19,6 +19,12 @@
 ## Demo
 
 !SLIDE
+# Exobrain
+* Raphael + Backbone
+* Traer soon :-)
+* 706 LoC
+
+!SLIDE
 # Questions?
 ## Nick Gauthier
 ### @ngauthier [ngauthier.com](http://ngauthier.com)
