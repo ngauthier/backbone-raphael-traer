@@ -68,9 +68,16 @@
 <p id='raphael-view'></p>
 
 !SLIDE
-# TODO
-* collection of simple models
-* traer backed model
-* force propagation
-* show demo
-* exobrain demo
+# Collections
+    @@@ javascript
+    var collection = new Backbone.Collection({
+      {value: 10},
+      {value: 20}
+    });
+    collection.each(function(model) {
+      var view = new ModelView({model: model});
+      $('body').append(view.render().el);
+    });
+
+!SLIDE
+# Enough Backbone for now
