@@ -19,7 +19,11 @@
 ## Demo
 
 !SLIDE
-# Questions
+# Questions?
 ## Nick Gauthier
-### @ngauthier
+### @ngauthier [ngauthier.com](http://ngauthier.com)
+### [http://ngauthier.com/backbone-raphael-traer](http://ngauthier.com/backbone-raphael-traer)
 ### [http://github.com/ngauthier/backbone-raphael-traer](http://github.com/ngauthier/backbone-raphael-traer)
+
+!SLIDE
+# Thanks!

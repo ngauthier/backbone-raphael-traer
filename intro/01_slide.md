@@ -1,7 +1,7 @@
 !SLIDE 
 # Backbone + Raphael + Traer
 ## Nick Gauthier
-### @ngauthier
+### @ngauthier [ngauthier.com](http://ngauthier.com)
 
 
 !SLIDE
